@@ -7,7 +7,7 @@ import (
 )
 
 func (c *APIClient) GetAreaDetails(area string) (LocationAreaDetails, error) {
-	url := baseURL + "location-area/" + area
+	url := locationURL + area
 
 	var data []byte
 	var err error

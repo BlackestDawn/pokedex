@@ -10,6 +10,7 @@ import (
 type APIClient struct {
 	httpClient http.Client
 	apiCache   *pokecache.PokeCache
+	pokemons   map[string]PokemonDetails
 }
 
 // Create new client
@@ -19,5 +20,6 @@ func NewAPIClient(timeout time.Duration) APIClient {
 			Timeout: timeout,
 		},
 		apiCache: pokecache.NewCache(cacheTimeout),
+		pokemons: make(map[string]PokemonDetails),
 	}
 }
