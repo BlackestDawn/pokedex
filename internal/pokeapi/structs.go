@@ -1,9 +1,4 @@
-package locations
-
-type LocationPaginate struct {
-	PrevPage *string
-	NextPage *string
-}
+package pokeapi
 
 // Batch response for location areas
 type LocationAreaBatch struct {
