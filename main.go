@@ -31,6 +31,9 @@ func main() {
 		words := cleanInput(reader.Text())
 		cmdName := words[0]
 		cmd, exists := getCommands()[cmdName]
+		if len(words) > 1 {
+			cfg.params = words[1:]
+		}
 		if exists {
 			err := cmd.callback(cfg)
 			if err != nil {

@@ -6,6 +6,7 @@ type config struct {
 	pokeApiClient pokeapi.APIClient
 	nextLocURL    *string
 	prevLocURL    *string
+	params        []string
 }
 
 type cliCommand struct {
