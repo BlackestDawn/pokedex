@@ -49,3 +49,11 @@ func (c *APIClient) GetPokemon(name string) (PokemonDetails, bool) {
 	poke, ok := c.pokemons[name]
 	return poke, ok
 }
+
+func (c *APIClient) ListPokemons() []string {
+	ret_val := make([]string, 0, len(c.pokemons))
+	for _, val := range c.pokemons {
+		ret_val = append(ret_val, val.Name)
+	}
+	return ret_val
+}
