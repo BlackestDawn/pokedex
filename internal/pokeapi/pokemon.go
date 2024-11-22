@@ -44,3 +44,8 @@ func (c *APIClient) GetPokemonDetails(pokemon string) (PokemonDetails, error) {
 func (c *APIClient) AddPokemon(pokemon PokemonDetails) {
 	c.pokemons[pokemon.Name] = pokemon
 }
+
+func (c *APIClient) GetPokemon(name string) (PokemonDetails, bool) {
+	poke, ok := c.pokemons[name]
+	return poke, ok
+}
